@@ -1,0 +1,19 @@
+import numpy as np
+
+def random_det_int():
+    # Ma trận nguyên 3x3 ban đầu
+    B = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 0]], dtype=int)   # để nguyên
+
+    # Thay đổi 1 phần tử bằng số nguyên ngẫu nhiên trong [1, 10)
+    B[1, 1] = np.random.randint(1, 10)
+
+    detB = int(round(np.linalg.det(B)))  # ép về int cho chắc
+    print("Ma trận B =\n", B)
+    print("det(B) =", detB)
+    return detB
+
+# Gọi vài lần
+#for _ in range(3):
+random_det_int()
